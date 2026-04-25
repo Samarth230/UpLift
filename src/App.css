@@ -1,0 +1,30 @@
+.app-transition {
+  animation: fadeIn var(--duration-normal) var(--ease-out);
+}
+
+/* Role switch hint at bottom */
+.app-role-hint {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-dark);
+  color: var(--text-tertiary);
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-xs);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: var(--z-sticky);
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  transition: all var(--duration-fast);
+  opacity: 0;
+  animation: fadeInUp 0.5s var(--ease-out) 1s both;
+}
+
+.app-role-hint:hover {
+  color: var(--accent);
+  transform: translateX(-50%) translateY(-2px);
+}

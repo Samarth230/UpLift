@@ -1,0 +1,146 @@
+.report-card {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+  animation: fadeInUp 0.4s var(--ease-out) both;
+}
+
+.report-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(78, 205, 196, 0.2);
+  transform: translateY(-1px);
+}
+
+.report-card-thumb {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.report-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Placeholder when no image */
+.report-card-thumb-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+.report-card-thumb-placeholder.cat-flooding { background: #DBEAFE; }
+.report-card-thumb-placeholder.cat-building { background: #FEE2E2; }
+.report-card-thumb-placeholder.cat-road { background: #FEF3C7; }
+.report-card-thumb-placeholder.cat-power { background: #E0E7FF; }
+.report-card-thumb-placeholder.cat-water { background: #D1FAE5; }
+.report-card-thumb-placeholder.cat-tree { background: #ECFDF5; }
+.report-card-thumb-placeholder.cat-gas { background: #FEF3C7; }
+.report-card-thumb-placeholder.cat-fire { background: #FEE2E2; }
+.report-card-thumb-placeholder.cat-medical { background: #FCE7F3; }
+.report-card-thumb-placeholder.cat-other { background: #F3F4F6; }
+
+.report-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.report-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.report-card-title {
+  font-size: var(--font-base);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.report-card-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  font-size: var(--font-xs);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.report-card-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.report-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.report-card-insight-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-xs);
+  font-weight: 600;
+  background: var(--accent-ghost);
+  color: var(--accent-dark);
+  transition: all var(--duration-fast);
+}
+
+.report-card-insight-btn:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* Verification Actions */
+.report-card-actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.report-card-actions button {
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-xs);
+  font-weight: 600;
+  transition: all var(--duration-fast);
+}
+
+.btn-verify {
+  background: var(--success);
+  color: white;
+}
+.btn-verify:hover {
+  background: var(--success-dark);
+}
+
+.btn-reject {
+  background: var(--danger-light);
+  color: var(--danger);
+}
+.btn-reject:hover {
+  background: var(--danger);
+  color: white;
+}
