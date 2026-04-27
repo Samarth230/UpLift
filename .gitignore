@@ -18,6 +18,8 @@ dist-ssr
 .env
 .env.local
 .env.*.local
+src/config/firebase.js
+src/config/gemini.js
 
 # Firebase
 .firebase/
