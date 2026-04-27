@@ -83,6 +83,10 @@ export function useChat() {
   // Initialize chat session
   const initChat = useCallback(() => {
     try {
+      if (!chatModel) {
+        console.warn('Chat model not available');
+        return;
+      }
       const chat = chatModel.startChat({
         history: [
           {
@@ -95,10 +99,7 @@ export function useChat() {
           }
         ],
         tools: [FIND_TASKS_TOOL],
-        systemInstruction: {
-          role: 'user',
-          parts: [{ text: SYSTEM_PROMPT }]
-        },
+        systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
       });
       chatRef.current = chat;
     } catch (err) {
