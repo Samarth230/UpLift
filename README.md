@@ -24,11 +24,14 @@ UpLift is a two-role platform that bridges the gap between field data and coordi
 
 | Role Selection | NGO Dashboard | AI Insight Trace |
 |---|---|---|
-| Clean role-based login with phone + OTP | Live map + verification queue side by side | Original report text alongside AI extraction |
+| <img width="1600" height="779" alt="image" src="https://github.com/user-attachments/assets/89c00961-fa84-4f84-857d-fc24e582e917" />
+ |<img width="775" height="799" alt="image" src="https://github.com/user-attachments/assets/ec705189-6661-49b0-b3d2-2ea03ecd87b9" />
+ |
 
 | Volunteer Chat |
 |---|
-| AI coordinator with function calling, matched tasks panel, mini-map |
+| <img width="1600" height="776" alt="image" src="https://github.com/user-attachments/assets/2a0f3052-e756-41f4-a2e1-02dcffcb2705" />
+ |
 
 ---
 
@@ -140,53 +143,7 @@ npm run dev
 
 App runs at `http://localhost:5173`
 
-### Configuration
-
-Create `src/config/firebase.js`:
-
-```js
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
-
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.firebasestorage.app",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
-
-const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
-export default app;
-```
-
-Create `src/config/gemini.js`:
-
-```js
-import { GoogleGenerativeAI } from '@google/generative-ai';
-
-const GEMINI_API_KEY = "YOUR_GEMINI_API_KEY";
-// Get a free key at https://aistudio.google.com/apikey
-
-const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
-
-export const analysisModel = genAI.getGenerativeModel({
-  model: 'gemini-1.5-flash',
-  generationConfig: {
-    temperature: 0.1,
-    response_mime_type: 'application/json',
-  }
-});
-
-export const chatModel = genAI.getGenerativeModel({
-  model: 'gemini-1.5-flash',
-});
-```
-
-Both files are in `.gitignore` — your keys will never be committed.
-
+---
 ### Available Scripts
 
 | Command | Description |
@@ -195,18 +152,7 @@ Both files are in `.gitignore` — your keys will never be committed.
 | `npm run build` | Build for production (output: `dist/`) |
 | `npm run preview` | Preview production build locally |
 
-### Deploy to Firebase Hosting
-
-```bash
-npm install -g firebase-tools
-firebase login
-firebase init hosting   # public dir = dist, single-page app = yes
-npm run build
-firebase deploy
-```
-
 ---
-
 ## Project Structure
 
 ```
