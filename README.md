@@ -22,16 +22,9 @@ UpLift is a two-role platform that bridges the gap between field data and coordi
 
 ## Screenshots
 
-| Role Selection | NGO Dashboard | AI Insight Trace |
-|---|---|---|
 | <img width="1600" height="779" alt="image" src="https://github.com/user-attachments/assets/89c00961-fa84-4f84-857d-fc24e582e917" />
- |<img width="775" height="799" alt="image" src="https://github.com/user-attachments/assets/ec705189-6661-49b0-b3d2-2ea03ecd87b9" />
- |
-
-| Volunteer Chat |
-|---|
+|<img width="775" height="799" alt="image" src="https://github.com/user-attachments/assets/ec705189-6661-49b0-b3d2-2ea03ecd87b9" />
 | <img width="1600" height="776" alt="image" src="https://github.com/user-attachments/assets/2a0f3052-e756-41f4-a2e1-02dcffcb2705" />
- |
 
 ---
 
