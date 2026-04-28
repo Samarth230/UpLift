@@ -40,42 +40,42 @@ export default function ReportCard({ report, index = 0, onInsightClick, onVerify
     >
       {/* Thumbnail */}
       {report.imageUrl ? (
-        <img
-          src={report.imageUrl}
-          alt={categoryLabel}
-          className="report-thumb"
-        />
+        <div className="report-card-thumb">
+          <img src={report.imageUrl} alt={categoryLabel} />
+        </div>
       ) : (
-        <div className="report-thumb report-thumb-placeholder" style={{ background: `${bgColor}15` }}>
+        <div className="report-card-thumb report-card-thumb-placeholder" style={{ background: `${bgColor}15` }}>
           <span style={{ fontSize: '1.5rem' }}>{emoji}</span>
         </div>
       )}
 
       {/* Content */}
-      <div className="report-content">
-        <div className="report-top-row">
-          <h3 className="report-title">{categoryLabel} {t('insight.location') !== 'Location' ? 'में' : 'in'} {report.locationName}</h3>
+      <div className="report-card-body">
+        <div className="report-card-header">
+          <h3 className="report-card-title">{categoryLabel} {t('insight.location') !== 'Location' ? 'में' : 'in'} {report.locationName}</h3>
           <UrgencyBadge score={report.urgencyScore} />
         </div>
 
-        <div className="report-meta">
+        <div className="report-card-meta">
           <span><User size={11} /> {report.reportedBy || t('insight.anonymous')}</span>
           <span><Clock size={11} /> {timeAgo(report.timestamp)} {t('report.ago')}</span>
         </div>
 
         {/* Actions */}
-        <div className="report-actions">
-          {onVerify && (
-            <button className="report-action-btn verify" onClick={() => onVerify(report.id)}>
-              <Check size={14} /> {t('report.verify')}
-            </button>
-          )}
-          {onReject && (
-            <button className="report-action-btn reject" onClick={() => onReject(report.id)}>
-              <XCircle size={14} /> {t('report.reject')}
-            </button>
-          )}
-          <button className="report-action-btn insight" onClick={() => onInsightClick?.(report)}>
+        <div className="report-card-footer">
+          <div className="report-card-actions">
+            {onVerify && (
+              <button className="btn-verify" onClick={(e) => { e.stopPropagation(); onVerify(report.id); }}>
+                <Check size={14} /> {t('report.verify')}
+              </button>
+            )}
+            {onReject && (
+              <button className="btn-reject" onClick={(e) => { e.stopPropagation(); onReject(report.id); }}>
+                <XCircle size={14} /> {t('report.reject')}
+              </button>
+            )}
+          </div>
+          <button className="report-card-insight-btn" onClick={(e) => { e.stopPropagation(); onInsightClick?.(report); }}>
             <Brain size={14} /> {t('report.insightTrace')}
           </button>
         </div>

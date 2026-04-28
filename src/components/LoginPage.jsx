@@ -110,6 +110,9 @@ export default function LoginPage({ preselectedRole, onLogin, onBack }) {
               </div>
               <h2 className="login-form-title">{t('login.signIn')}</h2>
               <p className="login-form-desc">{t('login.enterPhone')}</p>
+              <div style={{ color: 'var(--accent)', fontSize: '13px', marginBottom: '12px', textAlign: 'center', fontWeight: '500' }}>
+                💡 {t('login.demoPhoneHint')}
+              </div>
               {error && <div className="login-error"><AlertCircle size={16} />{error}</div>}
               <div className="login-phone-group">
                 <input className="login-country-code" value="+91" readOnly />
@@ -127,6 +130,9 @@ export default function LoginPage({ preselectedRole, onLogin, onBack }) {
               </button>
               <h2 className="login-form-title">{t('login.verifyOtp')}</h2>
               <p className="login-form-desc">{t('login.enterOtp')} +91 {phone}</p>
+              <div style={{ color: 'var(--accent)', fontSize: '13px', marginBottom: '12px', textAlign: 'center', fontWeight: '500' }}>
+                💡 {t('login.demoOtpHint')}
+              </div>
               {error && <div className="login-error"><AlertCircle size={16} />{error}</div>}
               <div className="login-otp-group">
                 {otp.map((digit, i) => (
@@ -150,15 +156,23 @@ export default function LoginPage({ preselectedRole, onLogin, onBack }) {
               </button>
               <h2 className="login-form-title">{isNgo ? t('login.verifyIdentity') : t('login.almostThere')}</h2>
               <p className="login-form-desc">{isNgo ? t('login.enterDetails') : t('login.enterName')}</p>
+              <div style={{ color: 'var(--accent)', fontSize: '13px', marginBottom: '12px', textAlign: 'center', fontWeight: '500' }}>
+                💡 {t('login.demoNameHint')}
+              </div>
               {error && <div className="login-error"><AlertCircle size={16} />{error}</div>}
               <input className="login-name-input" type="text" placeholder={t('login.namePlaceholder')} value={name} onChange={(e) => setName(e.target.value)} id="name-input" autoFocus />
               {isNgo && (
                 <div className="login-ngo-section">
                   <div className="login-ngo-label"><Shield size={12} /> {t('login.ngoVerification')}</div>
                   <input className="login-ngo-input" type="email" placeholder={t('login.ngoEmailPlaceholder')} value={ngoEmail} onChange={(e) => setNgoEmail(e.target.value)} id="ngo-email-input" />
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, margin: '10px 0 0' }}>
-                    <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: 12 }}>{t('login.or')}</span>
-                    <input className="login-ngo-input" type="text" placeholder={t('login.orgCodePlaceholder')} value={ngoCode} onChange={(e) => setNgoCode(e.target.value)} id="ngo-code-input" />
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: 8, margin: '10px 0 0' }}>
+                    <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: 12, marginTop: 10 }}>{t('login.or')}</span>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ color: 'var(--accent)', fontSize: '12px', marginBottom: '6px', fontWeight: '500' }}>
+                        💡 {t('login.demoNgoHint')}
+                      </div>
+                      <input className="login-ngo-input" type="text" placeholder={t('login.orgCodePlaceholder')} value={ngoCode} onChange={(e) => setNgoCode(e.target.value)} id="ngo-code-input" />
+                    </div>
                   </div>
                   <p className="login-ngo-hint">{t('login.ngoHint')}</p>
                 </div>
